@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iostream>
 using namespace std;
 #include <cstdlib> // For rand() and srand()
 #include <ctime>   // For time()
@@ -7,12 +8,15 @@ int main(){
     bool run = true ;
     while (run)
     {
-        cout<<"Rock = 1 Paper = 2  Scissor = 3 \nEnter number to   play"<<endl;
+        cout<<"Rock = 1 Paper = 2  Scissor = 3 \nEnter number to   play"<<endl<<endl;
+        cout<<"Range from [1 to 3]"<<endl;
 
         int num_play ;
         cin >> num_play;
         std::srand(std::time(0));
         int randomNumber = (std::rand() % 3) + 1;
+
+        
         if (num_play < 3 || num_play > 1 ){
             if (num_play == randomNumber ){
             cout << "again play computer chose: "<< randomNumber <<endl;
@@ -28,7 +32,11 @@ int main(){
                 break;
             
             }
-        }   
+        } 
+        else{
+            cout<< "wrong number please enter number again"<<endl;
+            continue;
+        }  
     }
     return 0 ;
     
